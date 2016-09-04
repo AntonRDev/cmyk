@@ -15,10 +15,8 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     toolsframe.cpp \
-    workframe.cpp \
     mainframe.cpp
 
 HEADERS  += mainwindow.h \
     toolsframe.h \
-    workframe.h \
     mainframe.h

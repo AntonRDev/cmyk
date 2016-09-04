@@ -10,9 +10,10 @@ namespace CMYK {
 ToolsFrame::ToolsFrame(QWidget *parent) : QFrame(parent){
 
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
-    setFrameStyle(StyledPanel | Sunken);
 
     QHBoxLayout *HBoxL = new QHBoxLayout(this);
+    HBoxL->setMargin(0);
+    HBoxL->setSpacing(10);
 
     QPushButton *firstBtn = new QPushButton;
     firstBtn->setText(tr("Создать\nзаказ"));

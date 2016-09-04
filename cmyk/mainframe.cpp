@@ -1,4 +1,5 @@
 #include <QVBoxLayout>
+#include <QTabWidget>
 #include "mainframe.h"
 #include "toolsframe.h"
 #include "workframe.h"
@@ -12,10 +13,17 @@ MainFrame::MainFrame(QWidget *parent) : QFrame(parent){
     QVBoxLayout *VBL = new QVBoxLayout(this);
 
     ToolsFrame *TF = new ToolsFrame;
-    WorkFrame *WF = new WorkFrame;
+
+    QTabWidget *TW = new QTabWidget(this);
+    QWidget *qw1 = new QWidget;
+    QWidget *qw2 = new QWidget;
+
+
+    TW->addTab(qw1, "qw1");
+    TW->addTab(qw2, "qw2");
 
     VBL->addWidget(TF);
-    VBL->addWidget(WF);
+    VBL->addWidget(TW);
 }
 
 MainFrame::~MainFrame(){
