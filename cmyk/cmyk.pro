@@ -12,11 +12,13 @@ TARGET = cmyk
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    toolsframe.cpp \
-    mainframe.cpp
+SOURCES +=  main.cpp\
+            mainwindow.cpp \
+            toolsframe.cpp \
+            mainframe.cpp \
+            orderdialog.cpp
 
 HEADERS  += mainwindow.h \
-    toolsframe.h \
-    mainframe.h
+            toolsframe.h \
+            mainframe.h \
+            orderdialog.h

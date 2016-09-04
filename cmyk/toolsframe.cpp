@@ -4,6 +4,7 @@
 #include <QSpacerItem>
 
 #include "toolsframe.h"
+#include "orderdialog.h"
 
 namespace CMYK {
 
@@ -15,16 +16,22 @@ ToolsFrame::ToolsFrame(QWidget *parent) : QFrame(parent){
     HBoxL->setMargin(0);
     HBoxL->setSpacing(10);
 
-    QPushButton *firstBtn = new QPushButton;
-    firstBtn->setText(tr("Создать\nзаказ"));
+    QPushButton *orderBtn = new QPushButton;
+    orderBtn->setText(tr("Создать\nзаказ"));
+    connect(orderBtn, SIGNAL(clicked(bool)), this, SLOT(createNewOrderDialog()) );
 
     QPushButton *secondBtn = new QPushButton;
     secondBtn->setText(tr("Срочный\nзаказ"));
 
-    HBoxL->addWidget(firstBtn);
+    HBoxL->addWidget(orderBtn);
     HBoxL->addWidget(secondBtn);
     HBoxL->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
+}
+
+void ToolsFrame::createNewOrderDialog(){
+    OrderDialog *dia = new OrderDialog(this);
+    dia->exec();
 }
 
 ToolsFrame::~ToolsFrame(){

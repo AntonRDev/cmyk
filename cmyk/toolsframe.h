@@ -11,6 +11,9 @@ class ToolsFrame : public QFrame{
 public:
     ToolsFrame(QWidget *parent=0);
     virtual ~ToolsFrame();
+
+private slots:
+    void createNewOrderDialog();
 };
 
 } //namespace CMYK
