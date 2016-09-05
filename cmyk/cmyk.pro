@@ -11,6 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = cmyk
 TEMPLATE = app
 
+CONFIG += C++11
+
 
 SOURCES +=  main.cpp\
             mainwindow.cpp \

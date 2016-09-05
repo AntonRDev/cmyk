@@ -12,15 +12,15 @@ ToolsFrame::ToolsFrame(QWidget *parent) : QFrame(parent){
 
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    QHBoxLayout *HBoxL = new QHBoxLayout(this);
+    auto HBoxL = new QHBoxLayout(this);
     HBoxL->setMargin(0);
     HBoxL->setSpacing(10);
 
-    QPushButton *orderBtn = new QPushButton;
+    auto orderBtn = new QPushButton;
     orderBtn->setText(tr("Создать\nзаказ"));
     connect(orderBtn, SIGNAL(clicked(bool)), this, SLOT(createNewOrderDialog()) );
 
-    QPushButton *secondBtn = new QPushButton;
+    auto secondBtn = new QPushButton;
     secondBtn->setText(tr("Срочный\nзаказ"));
 
     HBoxL->addWidget(orderBtn);
@@ -30,7 +30,7 @@ ToolsFrame::ToolsFrame(QWidget *parent) : QFrame(parent){
 }
 
 void ToolsFrame::createNewOrderDialog(){
-    OrderDialog *dia = new OrderDialog(this);
+    auto dia = new OrderDialog(this);
     dia->exec();
 }
 

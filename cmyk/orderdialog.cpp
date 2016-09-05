@@ -23,29 +23,36 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
             QVBoxLayout *L2 = new QVBoxLayout();
             L1->addLayout(L2);
 
-            QLabel * lbl = new QLabel(this);
+            auto lbl = new QLabel(this);
             lbl->setText(tr("Срок сдачи"));
             L2->addWidget(lbl);
 
-            QLineEdit * txt = new QLineEdit(this);
+            auto txt = new QLineEdit(this);
             txt->setInputMask("00.00.00");
             L2->addWidget(txt);
         }{
             QVBoxLayout *L2 = new QVBoxLayout();
             L1->addLayout(L2);
 
-            QLabel * lbl = new QLabel(this);
+            auto lbl = new QLabel(this);
             lbl->setText(tr("Время сдачи"));
             L2->addWidget(lbl);
 
-            QLineEdit * txt = new QLineEdit(this);
+            auto txt = new QLineEdit(this);
             txt->setInputMask("00:00");
             L2->addWidget(txt);
         }
         L1->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum));
         {
-            QComboBox *cbxUser = new QComboBox();
-            L1->addWidget(cbxUser);
+            QVBoxLayout *L2 = new QVBoxLayout();
+            L1->addLayout(L2);
+
+            auto lbl = new QLabel(this);
+            lbl->setText(tr("Менеджер проекта"));
+            L2->addWidget(lbl);
+
+            auto cbxUser = new QComboBox();
+            L2->addWidget(cbxUser);
         }
 
 

@@ -9,14 +9,14 @@ MainFrame::MainFrame(QWidget *parent) : QFrame(parent){
 
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    QVBoxLayout *VBL = new QVBoxLayout(this);
+    auto VBL = new QVBoxLayout(this);
 
-    ToolsFrame *TF = new ToolsFrame;
+    auto TF = new ToolsFrame;
 
-    QTabWidget *TW = new QTabWidget(this);
-    QWidget *qw1 = new QWidget;
-    QWidget *qw2 = new QWidget;
-    QWidget *qw3 = new QWidget;
+    auto TW = new QTabWidget(this);
+    auto qw1 = new QWidget;
+    auto qw2 = new QWidget;
+    auto qw3 = new QWidget;
 
 
     TW->addTab(qw1, tr("Очередь заказов"));
