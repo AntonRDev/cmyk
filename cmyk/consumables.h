@@ -1,9 +1,11 @@
 #ifndef CONSUMABLES_H
 #define CONSUMABLES_H
 
+#include <QString>
+
 class QString;
 
-namespace CMYK{
+namespace CMYK {
 
 class Consumables{
 
@@ -15,16 +17,16 @@ private:
 public:
     Consumables();
     Consumables(const QString &, int, int);
-    virtual ~Consumables();
+    virtual ~Consumables()=0;
 
-    virtual const QString & getName() const = 0;
-    virtual void setName(const QString &) = 0;
+    const QString & getName() const;
+    void setName(const QString &);
 
-    virtual const int getDensity() const = 0;
-    virtual void setDensity(const int) = 0;
+    const int getDensity() const;
+    void setDensity(const int);
 
-    virtual const int getQuantity() const = 0;
-    virtual void setQuantity(const int) = 0;
+    const int getQuantity() const;
+    void setQuantity(const int);
 
 };
 

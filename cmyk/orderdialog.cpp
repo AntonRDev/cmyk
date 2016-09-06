@@ -162,7 +162,7 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
                 L0->addLayout(L1);
 
                 auto lbl = new QLabel(this);
-                lbl->setText(tr("<b>Бумага блок:</b>"));
+                lbl->setText(tr("<b>Бумага обложка:</b>"));
                 L1->addWidget(lbl);
             }
 
@@ -175,11 +175,11 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
                 L1->addLayout(L2);
 
                 auto lbl = new QLabel(this);
-                lbl->setText(tr("Название"));
+                lbl->setText(tr("Тип"));
                 L2->addWidget(lbl);
 
-                auto txt = new QLineEdit(this);
-                L2->addWidget(txt);
+                auto cbxUser = new QComboBox();
+                L2->addWidget(cbxUser);
             }{
                 QVBoxLayout *L2 = new QVBoxLayout();
                 L2->setSpacing(spacing);
@@ -189,20 +189,19 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
                 lbl->setText(tr("Плотность"));
                 L2->addWidget(lbl);
 
-                auto txt = new QLineEdit(this);
-                txt->setInputMask("000");
-                L2->addWidget(txt);
+                auto cbxUser = new QComboBox();
+                L2->addWidget(cbxUser);
             }{
                 QVBoxLayout *L2 = new QVBoxLayout();
                 L2->setSpacing(spacing);
                 L1->addLayout(L2);
 
                 auto lbl = new QLabel(this);
-                lbl->setText(tr("Тип"));
+                lbl->setText(tr("Название"));
                 L2->addWidget(lbl);
 
-                auto txt = new QLineEdit(this);
-                L2->addWidget(txt);
+                auto cbxUser = new QComboBox();
+                L2->addWidget(cbxUser);
             }{
                 QVBoxLayout *L2 = new QVBoxLayout();
                 L2->setSpacing(spacing);
@@ -215,6 +214,8 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
                 auto txt = new QLineEdit(this);
                 L2->addWidget(txt);
             }
+            L1->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum));
+
         }
 
         // Бумага обложка ////
@@ -239,11 +240,11 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
                 L1->addLayout(L2);
 
                 auto lbl = new QLabel(this);
-                lbl->setText(tr("Название"));
+                lbl->setText(tr("Тип"));
                 L2->addWidget(lbl);
 
-                auto txt = new QLineEdit(this);
-                L2->addWidget(txt);
+                auto cbxUser = new QComboBox();
+                L2->addWidget(cbxUser);
             }{
                 QVBoxLayout *L2 = new QVBoxLayout();
                 L2->setSpacing(spacing);
@@ -253,20 +254,19 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
                 lbl->setText(tr("Плотность"));
                 L2->addWidget(lbl);
 
-                auto txt = new QLineEdit(this);
-                txt->setInputMask("000");
-                L2->addWidget(txt);
+                auto cbxUser = new QComboBox();
+                L2->addWidget(cbxUser);
             }{
                 QVBoxLayout *L2 = new QVBoxLayout();
                 L2->setSpacing(spacing);
                 L1->addLayout(L2);
 
                 auto lbl = new QLabel(this);
-                lbl->setText(tr("Тип"));
+                lbl->setText(tr("Название"));
                 L2->addWidget(lbl);
 
-                auto txt = new QLineEdit(this);
-                L2->addWidget(txt);
+                auto cbxUser = new QComboBox();
+                L2->addWidget(cbxUser);
             }{
                 QVBoxLayout *L2 = new QVBoxLayout();
                 L2->setSpacing(spacing);
@@ -279,6 +279,8 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
                 auto txt = new QLineEdit(this);
                 L2->addWidget(txt);
             }
+            L1->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum));
+
         }
 
         // Постпечатные работы ///////////////////////////////////////////////////
@@ -390,17 +392,17 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
             L1->addItem(new QSpacerItem(10, 0, QSizePolicy::Minimum, QSizePolicy::Minimum));
             {
                 QVBoxLayout *L2 = new QVBoxLayout();
-                L1->setSpacing(spacing);
+                L2->setSpacing(spacing);
                 L1->addLayout(L2);
 
                 auto lbl = new QLabel(this);
                 lbl->setText(tr("Плотность"));
                 L2->addWidget(lbl);
 
-                auto txt = new QLineEdit(this);
-                txt->setInputMask("000");
-                L2->addWidget(txt);
+                auto cbxUser = new QComboBox();
+                L2->addWidget(cbxUser);
             }
+            L1->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum));
         }
 
         // Ламинация обложка
@@ -412,7 +414,7 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
                 L0->addLayout(L1);
 
                 auto lbl = new QLabel(this);
-                lbl->setText(tr("<b>Ламинация обложка:</b>"));
+                lbl->setText(tr("<b>Ламинация блок:</b>"));
                 L1->addWidget(lbl);
             }
             QHBoxLayout *L1 = new QHBoxLayout();
@@ -444,17 +446,17 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
             L1->addItem(new QSpacerItem(10, 0, QSizePolicy::Minimum, QSizePolicy::Minimum));
             {
                 QVBoxLayout *L2 = new QVBoxLayout();
-                L1->setSpacing(spacing);
+                L2->setSpacing(spacing);
                 L1->addLayout(L2);
 
                 auto lbl = new QLabel(this);
                 lbl->setText(tr("Плотность"));
                 L2->addWidget(lbl);
 
-                auto txt = new QLineEdit(this);
-                txt->setInputMask("000");
-                L2->addWidget(txt);
+                auto cbxUser = new QComboBox();
+                L2->addWidget(cbxUser);
             }
+            L1->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum));
         }
 
         // Комментарии ///////////////////////////////////////////////////////////

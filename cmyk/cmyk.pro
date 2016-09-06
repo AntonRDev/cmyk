@@ -19,10 +19,14 @@ SOURCES +=  main.cpp\
             toolsframe.cpp \
             mainframe.cpp \
             orderdialog.cpp \
-            consumables.cpp
+            consumables.cpp \
+            paper.cpp \
+            lamination.cpp
 
 HEADERS  += mainwindow.h \
             toolsframe.h \
             mainframe.h \
             orderdialog.h \
-            consumables.h
+            consumables.h \
+            lamination.h \
+            paper.h
