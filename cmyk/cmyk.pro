@@ -18,9 +18,11 @@ SOURCES +=  main.cpp\
             mainwindow.cpp \
             toolsframe.cpp \
             mainframe.cpp \
-            orderdialog.cpp
+            orderdialog.cpp \
+            consumables.cpp
 
 HEADERS  += mainwindow.h \
             toolsframe.h \
             mainframe.h \
-            orderdialog.h
+            orderdialog.h \
+            consumables.h
