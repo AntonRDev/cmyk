@@ -1,6 +1,9 @@
 #include "order.h"
 
-Order::Order()
-{
+namespace CMYK{
+
+Order::Order(){
 
 }
+
+} //namespace CMYK

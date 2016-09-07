@@ -8,18 +8,18 @@ namespace CMYK {
 class Lamination : public Consumables{
 
 public:
-    enum laminationType {MATT, GLOSS, OTHER};
+    enum LAMTYPE {MATT, GLOSS, OTHER};
 
 private:
-    laminationType type;
+    LAMTYPE type;
 
 public:
     Lamination();
-    Lamination(QString, int, int, laminationType);
+    Lamination(QString, int, int, LAMTYPE);
     ~Lamination();
 
-    laminationType getLaminationType() const;
-    void setLaminationType(laminationType);
+    LAMTYPE getLaminationType() const;
+    void setLaminationType(LAMTYPE);
 };
 
 } //namespace CMYK

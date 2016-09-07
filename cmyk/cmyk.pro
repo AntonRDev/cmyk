@@ -21,7 +21,8 @@ SOURCES +=  main.cpp\
             orderdialog.cpp \
             consumables.cpp \
             paper.cpp \
-            lamination.cpp
+            lamination.cpp \
+            order.cpp
 
 HEADERS  += mainwindow.h \
             toolsframe.h \
@@ -29,4 +30,5 @@ HEADERS  += mainwindow.h \
             orderdialog.h \
             consumables.h \
             lamination.h \
-            paper.h
+            paper.h \
+            order.h

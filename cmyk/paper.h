@@ -9,18 +9,18 @@ namespace CMYK {
 class Paper : public Consumables{
 
 public:
-    enum paperType {MATT, GLOSS, OFFSET, DESIGN, STICKER, PLENKA, KALKA, TERMOTRANSFER, OTHER};
+    enum PAPERTYPE {MATT, GLOSS, OFFSET, DESIGN, STICKER, PLENKA, KALKA, TERMOTRANSFER, OTHER};
 
 private:
-    paperType type;
+    PAPERTYPE type;
 
 public:
     Paper();
-    Paper(QString, int, int, paperType);
+    Paper(QString, int, int, PAPERTYPE);
     virtual ~Paper();
 
-    paperType getPaperType() const;
-    void setPaperType(paperType);
+    PAPERTYPE getPaperType() const;
+    void setPaperType(PAPERTYPE);
 };
 
 } //namespace CMYK

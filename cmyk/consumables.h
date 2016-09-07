@@ -19,14 +19,14 @@ public:
     Consumables(const QString &, int, int);
     virtual ~Consumables()=0;
 
-    const QString & getName() const;
-    void setName(const QString &);
+    const QString & getName() const {return name;}
+    void setName(const QString & n) {name = n;}
 
-    const int getDensity() const;
-    void setDensity(const int);
+    const int getDensity() const {return density;}
+    void setDensity(const int den) {density = den;}
 
-    const int getQuantity() const;
-    void setQuantity(const int);
+    const int getQuantity() const {return quantity;}
+    void setQuantity(const int q) {quantity = q;}
 
 };
 
