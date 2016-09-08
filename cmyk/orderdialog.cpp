@@ -284,6 +284,17 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
         }
 
         // Постпечатные работы ///////////////////////////////////////////////////
+        {
+            QVBoxLayout *L1 = new QVBoxLayout(); //for margin only
+            L1->setMargin(margin);
+            L0->addLayout(L1);
+
+            L1->addItem(new QSpacerItem(0, 15, QSizePolicy::Minimum, QSizePolicy::Minimum));
+
+            auto lbl = new QLabel(this);
+            lbl->setText(tr("<b>ПОСТПЕЧАТНЫЕ РАБОТЫ:</b>"));
+            L1->addWidget(lbl);
+        }
         // Скрепка / Биговка / Фальцовка / Пружина / Цвет пружины ////////////////
         {
             QHBoxLayout *L1 = new QHBoxLayout();

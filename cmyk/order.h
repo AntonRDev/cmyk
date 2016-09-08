@@ -34,9 +34,9 @@ private:
 
 public:
     Order();
-    Order(int prior, QString manag, QString comp, QString nme,
+    Order(int m_priority, QString m_manager, QString m_company, QString m_name,
           QDate dlDate, QTime dlTime, Paper covPaper, Paper blPaper,
-          Lamination covLamin, Lamination blLamin, QString comm, STATUS st=WAITING);
+          Lamination covLamin, Lamination blLamin, QString m_comments, STATUS st=WAITING);
 
     ~Order();
 
