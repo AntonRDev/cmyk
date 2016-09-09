@@ -20,8 +20,8 @@ MainFrame::MainFrame(QWidget *parent) : QFrame(parent){
 
 
     TW->addTab(qw1, tr("Очередь заказов"));
-    TW->addTab(qw2, "Расходные материалы");
-    TW->addTab(qw3, "История заказов");
+    TW->addTab(qw2, tr("Расходные материалы"));
+    TW->addTab(qw3, tr("История заказов"));
 
     VBL->addWidget(TF);
     VBL->addItem(new QSpacerItem(0, 12, QSizePolicy::Minimum, QSizePolicy::Minimum));

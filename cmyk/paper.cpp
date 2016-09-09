@@ -2,16 +2,16 @@
 
 namespace CMYK {
 
-Paper::Paper(QString nm, int den, int quant, PAPERTYPE tp) : Consumables(nm, den, quant), type(tp){}
+Paper::Paper(QString name, int density, int quantity, PAPERTYPE type) : Consumables(name, density, quantity), type_(type){}
 
-Paper::Paper() : Consumables(), type(OTHER){}
+Paper::Paper() : Consumables(), type_(PAPERTYPE::OTHER){}
 
 Paper::PAPERTYPE Paper::getPaperType() const{
-    return this->type;
+    return this->type_;
 }
 
-void Paper::setPaperType(Paper::PAPERTYPE t){
-    this->type = t;
+void Paper::setPaperType(PAPERTYPE type){
+    this->type_ = type;
 }
 
 Paper::~Paper(){}

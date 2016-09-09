@@ -14,67 +14,67 @@ public:
     enum STATUS{COMPLETE, HOLD, WAITING, INPROGRESS};
 
 private:
-    STATUS     status;
-    int        priority;
-    QString    manager;
-    QString    company;
-    QString    name;
+    STATUS     status_;
+    int        priority_;
+    QString    manager_;
+    QString    company_;
+    QString    name_;
 
-    QDate      createDate;
-    QTime      createTime;
-    QDate      deadLineDate;
-    QTime      deadLineTime;
+    QDate      create_date_;
+    QTime      create_time_;
+    QDate      dead_line_date_;
+    QTime      dead_line_time_;
 
-    Paper      coverPaper;
-    Paper      blockPaper;
-    Lamination coverLamination;
-    Lamination blockLamination;
+    Paper      cover_paper_;
+    Paper      block_paper_;
+    Lamination cover_lamination_;
+    Lamination block_lamination_;
 
-    QString    comments;
+    QString    comments_;
 
 public:
     Order();
-    Order(int m_priority, QString m_manager, QString m_company, QString m_name,
-          QDate dlDate, QTime dlTime, Paper covPaper, Paper blPaper,
-          Lamination covLamin, Lamination blLamin, QString m_comments, STATUS st=WAITING);
+    Order(STATUS status, int priority, QString manager, QString company, QString name,
+          QDate dl_date, QTime dl_time, Paper cov_paper, Paper bl_paper,
+          Lamination cov_lamin, Lamination bl_lamin, QString comments);
 
     ~Order();
 
-    STATUS getStatus() const {return status;}
-    void setStatus(STATUS s) {status = s;}
+    STATUS getStatus() const {return status_;}
+    void setStatus(STATUS s) {status_ = s;}
 
-    int getPriority() const {return priority;}
-    void setPriority(int p) {priority = p;}
+    int getPriority() const {return priority_;}
+    void setPriority(int p) {priority_ = p;}
 
-    const QString & getManager() const {return manager;}
-    void setManager(const QString & m) {manager = m;}
+    const QString & getManager() const {return manager_;}
+    void setManager(const QString & m) {manager_ = m;}
 
-    const QString & getCompany() const {return company;}
-    void setCompany(const QString & m) {company = m;}
+    const QString & getCompany() const {return company_;}
+    void setCompany(const QString & m) {company_ = m;}
 
-    const QString & getName() const {return name;}
-    void setName(const QString & n) {name = n;}
+    const QString & getName() const {return name_;}
+    void setName(const QString & n) {name_ = n;}
 
-    const QDate & getCreateDate() const {return createDate;}
-    const QTime & getCreateTime() const {return createTime;}
+    const QDate & getCreateDate() const {return create_date_;}
+    const QTime & getCreateTime() const {return create_time_;}
 
-    const QDate & getDLDate() const {return deadLineDate;}
-    const QTime & getDLTime() const {return deadLineTime;}
-    void setDLDate(const QDate & d) {deadLineDate = d;}
-    void setDLTime(const QTime & t) {deadLineTime = t;}
+    const QDate & getDLDate() const {return dead_line_date_;}
+    const QTime & getDLTime() const {return dead_line_time_;}
+    void setDLDate(const QDate & d) {dead_line_date_ = d;}
+    void setDLTime(const QTime & t) {dead_line_time_ = t;}
 
-    const Paper & getCoverPaper() const {return coverPaper;}
-    void setCoverPaper(const Paper & p) {coverPaper = p;}
-    const Paper & getBlockPaper() const {return blockPaper;}
-    void setBlockPaper(const Paper & p) {blockPaper = p;}
+    const Paper & getCoverPaper() const {return cover_paper_;}
+    void setCoverPaper(const Paper & p) {cover_paper_ = p;}
+    const Paper & getBlockPaper() const {return block_paper_;}
+    void setBlockPaper(const Paper & p) {block_paper_ = p;}
 
-    const Lamination & getCoverLamination() const {return coverLamination;}
-    void setCoverLamination(const Lamination & l) {coverLamination = l;}
-    const Lamination & getBlockLamination() const {return blockLamination;}
-    void setBlockLamination(const Lamination & l) {blockLamination = l;}
+    const Lamination & getCoverLamination() const {return cover_lamination_;}
+    void setCoverLamination(const Lamination & l) {cover_lamination_ = l;}
+    const Lamination & getBlockLamination() const {return block_lamination_;}
+    void setBlockLamination(const Lamination & l) {block_lamination_ = l;}
 
-    const QString & getComments() const {return comments;}
-    void setComments(const QString & c) {comments = c;}
+    const QString & getComments() const {return comments_;}
+    void setComments(const QString & c) {comments_ = c;}
 
 };
 

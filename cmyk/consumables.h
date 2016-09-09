@@ -3,30 +3,28 @@
 
 #include <QString>
 
-class QString;
-
 namespace CMYK {
 
 class Consumables{
 
 private:
-    QString name;
-    int     density;
-    int     quantity;
+    QString name_;
+    int     density_;
+    int     quantity_;
 
 public:
     Consumables();
     Consumables(const QString &, int, int);
     virtual ~Consumables()=0;
 
-    const QString & getName() const {return name;}
-    void setName(const QString & n) {name = n;}
+    const QString & getName() const {return name_;}
+    void setName(const QString & n) {name_ = n;}
 
-    const int getDensity() const {return density;}
-    void setDensity(const int den) {density = den;}
+    const int getDensity() const {return density_;}
+    void setDensity(const int den) {density_ = den;}
 
-    const int getQuantity() const {return quantity;}
-    void setQuantity(const int q) {quantity = q;}
+    const int getQuantity() const {return quantity_;}
+    void setQuantity(const int q) {quantity_ = q;}
 
 };
 

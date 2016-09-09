@@ -2,17 +2,17 @@
 
 namespace CMYK {
 
-Lamination::Lamination() : Consumables(), type(OTHER){}
+Lamination::Lamination() : Consumables(), type_(LAMTYPE::OTHER){}
 
-Lamination::Lamination(QString nm, int den, int quant, LAMTYPE tp) : Consumables(nm, den, quant), type(tp){}
+Lamination::Lamination(QString name, int density, int quantity, LAMTYPE type) : Consumables(name, density, quantity), type_(type){}
 
 Lamination::~Lamination(){}
 
 Lamination::LAMTYPE Lamination::getLaminationType() const{
-    return this->type;
+    return this->type_;
 }
-void Lamination::setLaminationType(Lamination::LAMTYPE t){
-    this->type = t;
+void Lamination::setLaminationType(LAMTYPE type){
+    this->type_ = type;
 }
 
 } //namespace CMYK

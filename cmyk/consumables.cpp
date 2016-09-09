@@ -2,9 +2,10 @@
 
 namespace CMYK {
 
-Consumables::Consumables() : name(""), density(0), quantity(0){}
+Consumables::Consumables() : name_(""), density_(0), quantity_(0){}
 
-Consumables::Consumables(const QString & str, int den, int quant) : name(str), density(den), quantity(quant){}
+Consumables::Consumables(const QString & name, int density, int quantity)
+    : name_(name), density_(density), quantity_(quantity){}
 
 Consumables::~Consumables(){}
 

@@ -9,10 +9,10 @@ namespace CMYK {
 class Paper : public Consumables{
 
 public:
-    enum PAPERTYPE {MATT, GLOSS, OFFSET, DESIGN, STICKER, PLENKA, KALKA, TERMOTRANSFER, OTHER};
+    enum class PAPERTYPE {MATT, GLOSS, OFFSET, DESIGN, STICKER, PLENKA, KALKA, TERMOTRANSFER, OTHER};
 
 private:
-    PAPERTYPE type;
+    PAPERTYPE type_;
 
 public:
     Paper();
