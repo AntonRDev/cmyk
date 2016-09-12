@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -22,7 +22,8 @@ SOURCES +=  main.cpp\
             consumables.cpp \
             paper.cpp \
             lamination.cpp \
-            order.cpp
+            order.cpp \
+            database.cpp
 
 HEADERS  += mainwindow.h \
             toolsframe.h \
@@ -31,4 +32,5 @@ HEADERS  += mainwindow.h \
             consumables.h \
             lamination.h \
             paper.h \
-            order.h
+            order.h \
+            database.h
