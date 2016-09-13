@@ -11,20 +11,24 @@ private:
     QString name_;
     int     density_;
     int     quantity_;
+    double  cost_;
 
 public:
     Consumables();
     Consumables(const QString &, int, int);
     virtual ~Consumables()=0;
 
-    const QString & getName() const {return name_;}
-    void setName(const QString & n) {name_ = n;}
+    const QString & get_name() const {return name_;}
+    void set_name(const QString & n) {name_ = n;}
 
-    const int getDensity() const {return density_;}
-    void setDensity(const int den) {density_ = den;}
+    int get_density() const {return density_;}
+    void set_density(int den) {density_ = den;}
 
-    const int getQuantity() const {return quantity_;}
-    void setQuantity(const int q) {quantity_ = q;}
+    int get_quantity() const {return quantity_;}
+    void set_quantity(int q) {quantity_ = q;}
+
+    double get_cost() const {return cost_;}
+    void set_cost (double c) {cost_ = c;}
 
 };
 

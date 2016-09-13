@@ -19,8 +19,8 @@ public:
     Paper(QString, int, int, PAPERTYPE);
     virtual ~Paper();
 
-    PAPERTYPE getPaperType() const;
-    void setPaperType(PAPERTYPE);
+    PAPERTYPE get_paper_type() const;
+    void set_paper_type(PAPERTYPE);
 };
 
 } //namespace CMYK

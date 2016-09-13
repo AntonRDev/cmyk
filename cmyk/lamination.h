@@ -18,8 +18,8 @@ public:
     Lamination(QString, int, int, LAMTYPE);
     virtual ~Lamination();
 
-    LAMTYPE getLaminationType() const;
-    void setLaminationType(LAMTYPE);
+    LAMTYPE get_lamination_type() const;
+    void set_lamination_type(LAMTYPE);
 };
 
 } //namespace CMYK

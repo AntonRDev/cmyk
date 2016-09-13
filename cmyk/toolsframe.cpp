@@ -18,18 +18,22 @@ ToolsFrame::ToolsFrame(QWidget *parent) : QFrame(parent){
 
     auto orderBtn = new QPushButton;
     orderBtn->setText(tr("Создать\nзаказ"));
-    connect(orderBtn, SIGNAL(clicked(bool)), this, SLOT(createNewOrderDialog()) );
-
-    auto secondBtn = new QPushButton;
-    secondBtn->setText(tr("Срочный\nзаказ"));
-
+    connect(orderBtn, SIGNAL(clicked(bool)), this, SLOT(create_new_order_dialog()) );
     HBoxL->addWidget(orderBtn);
-    HBoxL->addWidget(secondBtn);
+
+
+    auto expressOrder = new QPushButton;
+    expressOrder->setText(tr("Срочный\nзаказ"));
+    HBoxL->addWidget(expressOrder);
     HBoxL->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum));
+
+    auto Propetries = new QPushButton;
+    Propetries->setText(tr("Настройки"));
+    HBoxL->addWidget(Propetries);
 
 }
 
-void ToolsFrame::createNewOrderDialog(){
+void ToolsFrame::create_new_order_dialog(){
     auto dia = new OrderDialog(this);
     dia->exec();
 }

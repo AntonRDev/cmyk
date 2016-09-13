@@ -8,10 +8,10 @@ Lamination::Lamination(QString name, int density, int quantity, LAMTYPE type) : 
 
 Lamination::~Lamination(){}
 
-Lamination::LAMTYPE Lamination::getLaminationType() const{
+Lamination::LAMTYPE Lamination::get_lamination_type() const{
     return this->type_;
 }
-void Lamination::setLaminationType(LAMTYPE type){
+void Lamination::set_lamination_type(LAMTYPE type){
     this->type_ = type;
 }
 

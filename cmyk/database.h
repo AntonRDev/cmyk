@@ -16,7 +16,7 @@ public:
 
     ~Database();
 
-    bool isOpen();
+    bool is_open();
 
 };
 

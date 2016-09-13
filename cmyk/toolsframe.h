@@ -13,7 +13,7 @@ public:
     virtual ~ToolsFrame();
 
 private slots:
-    void createNewOrderDialog();
+    void create_new_order_dialog();
 };
 
 } //namespace CMYK

@@ -23,7 +23,7 @@ Database::~Database(){
     db_.close();
 }
 
-bool Database::isOpen(){
+bool Database::is_open(){
 
     return is_open_;
 }

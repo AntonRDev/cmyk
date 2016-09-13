@@ -6,11 +6,11 @@ Paper::Paper(QString name, int density, int quantity, PAPERTYPE type) : Consumab
 
 Paper::Paper() : Consumables(), type_(PAPERTYPE::OTHER){}
 
-Paper::PAPERTYPE Paper::getPaperType() const{
+Paper::PAPERTYPE Paper::get_paper_type() const{
     return this->type_;
 }
 
-void Paper::setPaperType(PAPERTYPE type){
+void Paper::set_paper_type(PAPERTYPE type){
     this->type_ = type;
 }
 
