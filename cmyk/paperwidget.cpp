@@ -16,8 +16,9 @@ PaperWidget::PaperWidget(QWidget *parent) : QWidget(parent){
     model->select();
     model->setHeaderData(0, Qt::Horizontal, tr("Название"));
     model->setHeaderData(1, Qt::Horizontal, tr("Плотность"));
-    model->setHeaderData(1, Qt::Horizontal, tr("Количество"));
-    model->setHeaderData(1, Qt::Horizontal, tr("Цена за лист"));
+    model->setHeaderData(2, Qt::Horizontal, tr("Количество"));
+    model->setHeaderData(3, Qt::Horizontal, tr("Тип"));
+    model->setHeaderData(4, Qt::Horizontal, tr("Цена за лист"));
 
     QTableView *view = new QTableView();
     view->setModel(model);
