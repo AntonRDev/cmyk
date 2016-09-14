@@ -6,6 +6,9 @@
 namespace CMYK {
 
 class OrderDialog : public QDialog{
+
+    Q_OBJECT
+
 public:
     OrderDialog(QWidget *parent=0);
     virtual ~OrderDialog();

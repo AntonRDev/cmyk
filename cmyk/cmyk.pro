@@ -23,7 +23,8 @@ SOURCES +=  main.cpp\
             paper.cpp \
             lamination.cpp \
             order.cpp \
-            database.cpp
+            database.cpp \
+            paperwidget.cpp
 
 HEADERS  += mainwindow.h \
             toolsframe.h \
@@ -33,4 +34,5 @@ HEADERS  += mainwindow.h \
             lamination.h \
             paper.h \
             order.h \
-            database.h
+            database.h \
+            paperwidget.h
