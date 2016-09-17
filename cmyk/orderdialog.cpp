@@ -130,17 +130,6 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
                 txt->setInputMask("00000");
                 L2->addWidget(txt);
             }{
-                QVBoxLayout *L2 = new QVBoxLayout();
-                L2->setSpacing(spacing);
-                L1->addLayout(L2);
-
-                auto lbl = new QLabel(this);
-                lbl->setText(tr("Формат"));
-                L2->addWidget(lbl);
-
-                auto txt = new QLineEdit(this);
-                L2->addWidget(txt);
-            }{
                 QHBoxLayout *L2 = new QHBoxLayout();
                 L1->addLayout(L2);
 
@@ -150,6 +139,50 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
 
                 auto chkbx = new QCheckBox(this);
                 L2->addWidget(chkbx);
+            }
+        }
+
+        // Формат / Ширина макета / высота макета / на листе
+        {
+            QHBoxLayout *L1 = new QHBoxLayout();
+            L1->setMargin(margin);
+            L0->addLayout(L1);
+            {
+                QVBoxLayout *L2 = new QVBoxLayout();
+                L2->setSpacing(spacing);
+                L1->addLayout(L2);
+
+                auto lbl = new QLabel(this);
+                lbl->setText(tr("Ширина макета в мм"));
+                L2->addWidget(lbl);
+
+                auto txt = new QLineEdit(this);
+                txt->setInputMask("000");
+                L2->addWidget(txt);
+            }{
+                QVBoxLayout *L2 = new QVBoxLayout();
+                L2->setSpacing(spacing);
+                L1->addLayout(L2);
+
+                auto lbl = new QLabel(this);
+                lbl->setText(tr("Высота макета в мм"));
+                L2->addWidget(lbl);
+
+                auto txt = new QLineEdit(this);
+                txt->setInputMask("000");
+                L2->addWidget(txt);
+            }{
+                QVBoxLayout *L2 = new QVBoxLayout();
+                L2->setSpacing(spacing);
+                L1->addLayout(L2);
+
+                auto lbl = new QLabel(this);
+                lbl->setText(tr("Штук на листе"));
+                L2->addWidget(lbl);
+
+                auto items_per_page = new QLabel(this);
+                items_per_page->setText(tr("Штук на листе"));
+                L2->addWidget(items_per_page);
             }
         }
 
@@ -301,51 +334,54 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
             L1->setMargin(margin);
             L0->addLayout(L1);
             {
-                QHBoxLayout *L2 = new QHBoxLayout();
+                auto *L2 = new QVBoxLayout();
                 L1->addLayout(L2);
 
                 auto lbl = new QLabel(this);
-                lbl->setText(tr("Скрепка"));
+                lbl->setText(tr("Скрепка (кол-во:)"));
                 L2->addWidget(lbl);
 
-                auto chkbx = new QCheckBox(this);
-                L2->addWidget(chkbx);
+                auto txt = new QLineEdit(this);
+                txt->setInputMask("0");
+                L2->addWidget(txt);
             }
             L1->addItem(new QSpacerItem(10, 0, QSizePolicy::Minimum, QSizePolicy::Minimum));
             {
-                QHBoxLayout *L2 = new QHBoxLayout();
+                auto *L2 = new QVBoxLayout();
                 L1->addLayout(L2);
 
                 auto lbl = new QLabel(this);
-                lbl->setText(tr("Биговка"));
+                lbl->setText(tr("Биговка (кол-во:)"));
                 L2->addWidget(lbl);
 
-                auto chkbx = new QCheckBox(this);
-                L2->addWidget(chkbx);
+                auto txt = new QLineEdit(this);
+                txt->setInputMask("0");
+                L2->addWidget(txt);
             }
             L1->addItem(new QSpacerItem(10, 0, QSizePolicy::Minimum, QSizePolicy::Minimum));
             {
-                QHBoxLayout *L2 = new QHBoxLayout();
+                auto *L2 = new QVBoxLayout();
                 L1->addLayout(L2);
 
                 auto lbl = new QLabel(this);
-                lbl->setText(tr("Фальцовка"));
+                lbl->setText(tr("Фальцовка (кол-во:)"));
                 L2->addWidget(lbl);
 
-                auto chkbx = new QCheckBox(this);
-                L2->addWidget(chkbx);
+                auto txt = new QLineEdit(this);
+                txt->setInputMask("0");
+                L2->addWidget(txt);
             }
             L1->addItem(new QSpacerItem(10, 0, QSizePolicy::Minimum, QSizePolicy::Minimum));
             {
-                QHBoxLayout *L2 = new QHBoxLayout();
+                auto *L2 = new QVBoxLayout();
                 L1->addLayout(L2);
 
                 auto lbl = new QLabel(this);
-                lbl->setText(tr("Пружина"));
+                lbl->setText(tr("Пружина (по стороне:)"));
                 L2->addWidget(lbl);
 
-                auto chkbx = new QCheckBox(this);
-                L2->addWidget(chkbx);
+                auto txt = new QLineEdit(this);
+                L2->addWidget(txt);
             }
             L1->addItem(new QSpacerItem(10, 0, QSizePolicy::Minimum, QSizePolicy::Minimum));
             {
@@ -407,6 +443,17 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
                 L1->addLayout(L2);
 
                 auto lbl = new QLabel(this);
+                lbl->setText(tr("Тип"));
+                L2->addWidget(lbl);
+
+                auto cbxUser = new QComboBox();
+                L2->addWidget(cbxUser);
+            }{
+                QVBoxLayout *L2 = new QVBoxLayout();
+                L2->setSpacing(spacing);
+                L1->addLayout(L2);
+
+                auto lbl = new QLabel(this);
                 lbl->setText(tr("Плотность"));
                 L2->addWidget(lbl);
 
@@ -456,6 +503,17 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent){
             }
             L1->addItem(new QSpacerItem(10, 0, QSizePolicy::Minimum, QSizePolicy::Minimum));
             {
+                QVBoxLayout *L2 = new QVBoxLayout();
+                L2->setSpacing(spacing);
+                L1->addLayout(L2);
+
+                auto lbl = new QLabel(this);
+                lbl->setText(tr("Тип"));
+                L2->addWidget(lbl);
+
+                auto cbxUser = new QComboBox();
+                L2->addWidget(cbxUser);
+            }{
                 QVBoxLayout *L2 = new QVBoxLayout();
                 L2->setSpacing(spacing);
                 L1->addLayout(L2);

@@ -69,10 +69,10 @@ void PaperWidget::slot_delete_paper(){
     //ВАЖНО
     //Проверить бумаги в списке заказов. Если используется -> удаление запрещено(?)
 
-    int reply;
-    reply = QMessageBox::warning(this, tr("Удаление бумаги"),
-                                                             tr("Удалить выбранную бумагу?"),
-                                                             QMessageBox::Yes, QMessageBox::No);
+    int reply = QMessageBox::warning(this,
+                                    tr("Удаление бумаги"),
+                                    tr("Удалить выбранную бумагу?"),
+                                    QMessageBox::Yes, QMessageBox::No);
     if(reply == QMessageBox::No){
         return;
     }
