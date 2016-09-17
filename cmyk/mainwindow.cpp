@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent){
 
     setWindowTitle(tr("CMYKlaboratory"));
-    setMinimumSize(600,400);
+    setMinimumSize(800, 600);
 
     auto MF = new MainFrame(this);
 

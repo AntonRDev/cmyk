@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QSqlTableModel>
+#include <QTableView>
 
 namespace CMYK {
 
@@ -11,7 +12,8 @@ class PaperWidget : public QWidget{
     Q_OBJECT
 
 private:
-    QSqlTableModel * model;
+    QSqlTableModel * coated_paper_model_;
+    QTableView     * coated_paper_view_;
 
 public:
     PaperWidget(QWidget *parent = 0);

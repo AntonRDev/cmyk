@@ -4,6 +4,8 @@
 #include <QPushButton>
 #include <QMessageBox>
 #include <QSqlError>
+#include <QSqlRecord>
+#include <QDebug>
 #include "paperwidget.h"
 
 namespace CMYK {
@@ -26,73 +28,67 @@ PaperWidget::PaperWidget(QWidget *parent) : QWidget(parent){
         auto del_btn = new QPushButton;
         del_btn->setText(tr("Удалить"));
         hbl->addWidget(del_btn);
+        connect(del_btn, SIGNAL(clicked(bool)), this, SLOT(slot_delete_paper()) );
+
 
         hbl->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
         vbl->addLayout(hbl);
     }
 
-    model = new QSqlTableModel();
-    model->setTable("paper");
-    model->select();
-    model->setHeaderData(0, Qt::Horizontal, tr("Название"));
-    model->setHeaderData(1, Qt::Horizontal, tr("Плотность"));
-    model->setHeaderData(2, Qt::Horizontal, tr("Количество"));
-    model->setHeaderData(3, Qt::Horizontal, tr("Тип"));
-    model->setHeaderData(4, Qt::Horizontal, tr("Цена за лист"));
+    coated_paper_model_ = new QSqlTableModel();
+    coated_paper_model_->setTable("coated_paper");
+    coated_paper_model_->select();
+    coated_paper_model_->setHeaderData(0, Qt::Horizontal, tr("Название"));
+    coated_paper_model_->setHeaderData(1, Qt::Horizontal, tr("Плотность"));
+    coated_paper_model_->setHeaderData(2, Qt::Horizontal, tr("Количество"));
+    coated_paper_model_->setHeaderData(3, Qt::Horizontal, tr("Тип"));
+    coated_paper_model_->setHeaderData(4, Qt::Horizontal, tr("Цена за лист"));
 
-    QTableView *view = new QTableView();
-    view->setModel(model);
-    view->show();
+    coated_paper_view_ = new QTableView();
+    coated_paper_view_->setModel(coated_paper_model_);
+    coated_paper_view_->show();
 
-    vbl->addWidget(view);
+    vbl->addWidget(coated_paper_view_);
 
 }
 
 void PaperWidget::slot_add_paper(){
-    int cnt=model->rowCount();
+    int cnt=coated_paper_model_->rowCount();
 
-        if (!model->insertRows(cnt,1))
+        if (!coated_paper_model_->insertRows(cnt,1))
         {
              QMessageBox::critical(this, tr("БД"),
                                  tr("Вставка строки вызвала следующую ошибку:\r\n %1")
-                                 .arg(model->lastError().databaseText()));
+                                 .arg(coated_paper_model_->lastError().databaseText()));
 
         }
 }
 
 void PaperWidget::slot_delete_paper(){
     //ВАЖНО
-    //Проверить бумаги в списке заказов. Если используется -> удаление запрещено
-    //Добавить диалог ok / cansel
+    //Проверить бумаги в списке заказов. Если используется -> удаление запрещено(?)
 
-    //ЧУЖОЙ КОД, ПОСМОТРЕТЬ ПОЗЖЕ
-//    int row;
-//      QItemSelectionModel    *selectModel;
-//      QModelIndexList         indexes;
-//      QModelIndex             index;
+    int reply;
+    reply = QMessageBox::warning(this, tr("Удаление бумаги"),
+                                                             tr("Удалить выбранную бумагу?"),
+                                                             QMessageBox::Yes, QMessageBox::No);
+    if(reply == QMessageBox::No){
+        return;
+    }
 
-//        // Узнаем выделенную строку
-//        selectModel = view->selectionModel();
-//        indexes = selectModel->selectedIndexes();
+    if(coated_paper_view_->currentIndex().isValid()){
 
-//        foreach(index, indexes)
-//        {
-//            QString str;
-//            row = index.row();
-//            if (!model->removeRows(row,1))
-//            {
-//                str = model->lastError().text();
-//                qDebug() << str << "\n\r";
-//                break;
-//            }
-//            else
-//            {
-//                view->setRowHidden(row, true);
-//            }
-//        }
-//        SlotChange();
-//        SlotClick();
+        int row = coated_paper_view_->currentIndex().row();
+        int column = coated_paper_view_->currentIndex().column();
+
+        qDebug() << coated_paper_model_->record(row).value(column) << "deleted";
+
+        coated_paper_model_->removeRows(row,1);
+        coated_paper_model_->submitAll();
+
+        coated_paper_model_->select();      // обновляем модель
+    }
 }
 
 } // namespace CMYK
